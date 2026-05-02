@@ -2,46 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Cyber Book of Answers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book of Answers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <main id="aboutPage" class="page show">
-    <h1>Book of Answers</h1>
-    <p>
-      Think of a question, but do not type it.
-      \nThe book only needs a number.
-    </p>
-    <p class="small">
-      Enter the ritual when you are ready.
-    </p>
-    <button id="enterBtn">Enter</button>
-  </main>
+  <section id="aboutPage" class="page active">
+    <div class="book-card">
+      <p class="eyebrow">digital divination</p>
+      <h1>Book of Answers</h1>
 
-  <main id="oraclePage" class="page">
-    <h1>Ask Silently</h1>
-    <p class="instruction">
-      Hold your question in your mind.
-    </p>
+      <p class="about-text">
+        Think of a question, but do not type it.<br>  
+        The book only asks for a number.
+      </p>
 
-    <input 
-      id="numberInput" 
-      type="number" 
-      placeholder="Enter a number (1–100)" 
-      min="1" 
-      max="100"
-    />
+      <p class="small-text">
+        This ritual turns a number into an answer through code, chance, and interpretation.
+      </p>
 
-    <button id="submitBtn">Reveal Answer</button>
-  </main>
+      <button id="enterBtn">Open the Book</button>
+    </div>
+  </section>
 
-  <main id="answerPage" class="page answer-page">
-    <div id="answer"></div>
-    <p id="returnHint">click anywhere to return</p>
-  </main>
+  <section id="oraclePage" class="page">
+    <div class="book-card">
+      <p class="eyebrow">ask silently</p>
+      <h1>Hold Your Question</h1>
 
-  <div id="overlay" class="overlay"></div>
+      <p class="about-text">
+        Choose a number between 1 and 100.
+      </p>
+
+      <form id="oracleForm">
+        <input
+          id="numberInput"
+          type="number"
+          min="1"
+          max="100"
+          placeholder="1–100"
+          required
+        />
+        <button type="submit">Reveal Answer</button>
+      </form>
+
+      <p class="small-text">
+        Press Enter or click the button.
+      </p>
+    </div>
+  </section>
+
+  <section id="answerPage" class="page answer-page">
+    <div class="answer-wrap">
+      <p id="answer"></p>
+      <p id="returnHint">click anywhere to return · the book does not explain itself</p>
+    </div>
+  </section>
+
+  <div id="overlay"></div>
 
   <script src="script.js"></script>
 </body>
