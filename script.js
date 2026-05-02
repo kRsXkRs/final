@@ -1,75 +1,93 @@
-let data;
+let data = null;
 
 const aboutPage = document.getElementById("aboutPage");
 const oraclePage = document.getElementById("oraclePage");
 const answerPage = document.getElementById("answerPage");
+
 const enterBtn = document.getElementById("enterBtn");
-const submitBtn = document.getElementById("submitBtn");
+const oracleForm = document.getElementById("oracleForm");
 const numberInput = document.getElementById("numberInput");
-const answerDiv = document.getElementById("answer");
+
+const answer = document.getElementById("answer");
+const returnHint = document.getElementById("returnHint");
 const overlay = document.getElementById("overlay");
 
 fetch("data.json")
-  .then(res => res.json())
+  .then(response => response.json())
   .then(json => {
     data = json;
+  })
+  .catch(error => {
+    console.error("Could not load data.json:", error);
   });
 
 enterBtn.addEventListener("click", () => {
   showPage(oraclePage);
+
+  setTimeout(() => {
+    numberInput.focus();
+  }, 100);
 });
 
-submitBtn.addEventListener("click", revealAnswer);
-
-numberInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    revealAnswer();
-  }
+oracleForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  revealAnswer();
 });
 
 answerPage.addEventListener("click", () => {
   numberInput.value = "";
-  answerDiv.textContent = "";
+  answer.textContent = "";
+  answer.classList.remove("reveal");
+  returnHint.classList.remove("reveal");
   showPage(oraclePage);
+
+  setTimeout(() => {
+    numberInput.focus();
+  }, 100);
 });
 
 function revealAnswer() {
-  let num = parseInt(numberInput.value);
-
-  if (!num || num < 1 || num > 100) {
-    alert("Enter a number between 1 and 100");
-    return;
-  }
+  const num = Number(numberInput.value);
 
   if (!data) {
-    alert("The book is still loading.");
+    alert("The book is still loading. Try again.");
     return;
   }
 
-  let categoryIndex = num % 4;
-  let category;
+  if (!Number.isInteger(num) || num < 1 || num > 100) {
+    alert("Enter a whole number between 1 and 100.");
+    return;
+  }
 
-  if (categoryIndex === 0) category = "yes";
-  if (categoryIndex === 1) category = "no";
-  if (categoryIndex === 2) category = "maybe";
-  if (categoryIndex === 3) category = "wait";
+  const categories = ["yes", "no", "maybe", "wait"];
+  const category = categories[num % 4];
 
-  let answers = data[category];
-  let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+  const possibleAnswers = data[category];
+  const chosenAnswer = possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)];
 
-  overlay.classList.add("show");
+  overlay.classList.add("active");
 
   setTimeout(() => {
-    answerDiv.textContent = randomAnswer;
+    answer.textContent = chosenAnswer;
+
+    answer.classList.remove("reveal");
+    returnHint.classList.remove("reveal");
+
     showPage(answerPage);
-    overlay.classList.remove("show");
-  }, 1200);
+
+    void answer.offsetWidth;
+
+    answer.classList.add("reveal");
+    returnHint.classList.add("reveal");
+
+    overlay.classList.remove("active");
+  }, 1000);
 }
 
-function showPage(pageToShow) {
-  aboutPage.classList.remove("show");
-  oraclePage.classList.remove("show");
-  answerPage.classList.remove("show");
+function showPage(page) {
+  aboutPage.classList.remove("active");
+  oraclePage.classList.remove("active");
+  answerPage.classList.remove("active");
 
-  pageToShow.classList.add("show");
+  page.classList.add("active");
 }
