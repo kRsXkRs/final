@@ -1,0 +1,22 @@
+{
+  "yes": [
+    "Yes.",
+    "Without a doubt.",
+    "You already know the answer."
+  ],
+  "no": [
+    "No.",
+    "Absolutely not.",
+    "Do not proceed."
+  ],
+  "maybe": [
+    "It is unclear.",
+    "The answer is hidden.",
+    "Look again later."
+  ],
+  "wait": [
+    "Not now.",
+    "Wait and see.",
+    "Timing is not right."
+  ]
+}
