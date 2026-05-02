@@ -1,22 +1,70 @@
 {
   "yes": [
-    "Yes.",
-    "Without a doubt.",
-    "You already know the answer."
+    "Yes, though quietly.",
+    "The answer leans toward yes.",
+    "It has already begun.",
+    "You are moving with the current.",
+    "This choice echoes something true.",
+    "What you seek is already opening.",
+    "The path does not resist you.",
+    "It will unfold in your favor.",
+    "A soft yes, but a yes nonetheless.",
+    "You are closer than you think.",
+    "This direction carries meaning.",
+    "You may proceed without fear.",
+    "The answer rests gently in yes.",
+    "Yes. You were going to do it anyway.",
+    "You already decided. This is just confirmation."
   ],
   "no": [
-    "No.",
-    "Absolutely not.",
-    "Do not proceed."
+    "No, and it will not change.",
+    "This path withdraws from you.",
+    "The answer closes itself.",
+    "What you seek is not here.",
+    "You are facing the wrong direction.",
+    "This door was never meant to open.",
+    "Let this question dissolve.",
+    "It ends before it begins.",
+    "The answer turns away.",
+    "There is nothing for you here.",
+    "You already feel the refusal.",
+    "This choice will not hold.",
+    "No. Let it pass.",
+    "No. You know that.",
+    "No. Just no."
   ],
   "maybe": [
-    "It is unclear.",
-    "The answer is hidden.",
-    "Look again later."
+    "The answer shifts as you look at it.",
+    "It is neither yes nor no.",
+    "The shape of the answer is still forming.",
+    "You are asking too early.",
+    "Something remains unseen.",
+    "The answer moves with you.",
+    "It depends on what you do next.",
+    "Clarity has not arrived yet.",
+    "The question is still alive.",
+    "There is no fixed answer here.",
+    "It will change with time.",
+    "Look again from another angle.",
+    "The answer resists definition.",
+    "Maybe. That depends on you.",
+    "Unclear. Stay there for a bit."
   ],
   "wait": [
     "Not now.",
-    "Wait and see.",
-    "Timing is not right."
+    "Time has not aligned.",
+    "Wait, even if it feels unnecessary.",
+    "Let the moment arrive first.",
+    "You are ahead of the answer.",
+    "The answer will come later.",
+    "Pause, and do nothing.",
+    "This is a waiting place.",
+    "Return when the air has shifted.",
+    "The answer is not ready to be seen.",
+    "Let things unfold without you.",
+    "Stillness is required.",
+    "Wait. Then wait again.",
+    "Not now. Seriously.",
+    "Wait. You're too early."
   ]
 }
