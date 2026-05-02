@@ -14,12 +14,15 @@
       Think of a question. Hold it in your mind.
     </p>
 
-    <input id="numberInput" type="number" placeholder="Enter a number (1–100)">
+    <input id="numberInput" type="number" placeholder="Enter a number (1–100)" min="1" max="100">
 
     <button id="submitBtn">Reveal Answer</button>
 
-    <div id="answer" class="hidden"></div>
+    <div id="answer"></div>
   </div>
+
+  <!-- 黑屏过渡 -->
+  <div id="overlay" class="overlay"></div>
 
   <script src="script.js"></script>
 </body>
